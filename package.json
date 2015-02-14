@@ -1,0 +1,8 @@
+{
+	"name": "CustomInput",
+	"description": "Custom form input types for Google Forms.",
+	"devDependencies": {
+		"zombie": "2.5.x",
+		"chai": "2.0.x"
+	}
+}
