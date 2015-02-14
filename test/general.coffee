@@ -12,6 +12,12 @@ initialize = ->
 	describe "initialize CustomInput", ->
 		it "is initialized"
 
+googleLogin = (host, browser) ->
+	oldPath = browser.location.pathname
+	browser.fill("Email", login.email).fill("Password", login.password)
+	browser.pressButton "Sign in", ->
+		expect(browser.location.pathname).to.not.be.equal(oldPath)
+
 describe "Google Forms editor", ->
 	before (done) ->
 		this.browser = new Browser()
@@ -22,6 +28,8 @@ describe "Google Forms editor", ->
 		expect(this.browser.statusCode).to.be.equal(200)
 	it "has elements", ->
 		expect(this.browser.queryAll('input')).to.have.length.of.at.least(2)
+	it "logs in", ->
+		googleLogin("editor", this.browser)
 	addStandalone("editor")
 	initialize()
 	describe "check location differentiators", ->
