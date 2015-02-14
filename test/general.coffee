@@ -8,8 +8,8 @@ addStandalone = (host) ->
 		it "is triggered"
 		it "is loaded"
 
-initialize = ->
-	describe "initialize CustomInput", ->
+initialize = (host) ->
+	describe "initialize CustomInput in #{host}", ->
 		it "is initialized"
 
 googleLogin = (host, browser) ->
@@ -31,7 +31,7 @@ describe "Google Forms editor", ->
 	it "logs in", ->
 		googleLogin("editor", this.browser)
 	addStandalone("editor")
-	initialize()
+	initialize("editor")
 	describe "check location differentiators", ->
 		it "identifies the editor"
 		it "(correctly) doesn't identify viewer"
@@ -40,7 +40,7 @@ describe "load Google Forms viewer", ->
 	it "loaded properly"
 	it "has elements"
 	addStandalone("viewer")
-	initialize()
+	initialize("viewer")
 	describe "check location differentiators", ->
 		it "identifies the viewer"
 		it "(correctly) doesn't identify editor"
