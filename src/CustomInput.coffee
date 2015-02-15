@@ -1,4 +1,4 @@
-define ->
+define ["CustomInput/util/InputTypeList"], (InputTypeList) ->
 	class CustomInput
 		# [Boolean] checkPages - If yes, checks the current URL to determine if
 		# the editor or viewer should be parsed and enhanced.
@@ -12,6 +12,10 @@ define ->
 				@loadViewer()
 			if @isEditor(url)
 				@loadEditor()
+		# [InputType] type
+		addType: (type) ->
+			@extraInputTypes ?= new InputTypeList()
+			@extraInputTypes.push type
 		loadViewer: ->
 			# @viewer = new Viewer()
 			# fields = @viewer.getFields()
