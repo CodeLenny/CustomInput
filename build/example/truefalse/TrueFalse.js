@@ -20,7 +20,7 @@
 
   require(["CustomInput/CustomInput", "TrueFalse/Question"], function(CustomInput, Question) {
     var TrueFalse;
-    return TrueFalse = (function(_super) {
+    TrueFalse = (function(_super) {
       __extends(TrueFalse, _super);
 
       function TrueFalse() {
@@ -31,6 +31,7 @@
       return TrueFalse;
 
     })(CustomInput);
+    return window.truefalse = new TrueFalse();
   });
 
 }).call(this);

@@ -14,3 +14,4 @@ require ["CustomInput/CustomInput", "TrueFalse/Question"], (CustomInput, Questio
         constructor: ->
             @add Question
             super yes
+    window.truefalse = new TrueFalse()
