@@ -12,7 +12,7 @@
 
   sub = dev ? "" : "cdn.";
 
-  if (version == null) {
+  if (version === "") {
     version = "master";
   }
 
