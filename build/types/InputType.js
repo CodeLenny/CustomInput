@@ -8,6 +8,14 @@
         this.description = inherit && inherit.description ? inherit.description : "";
       }
 
+      InputType.prototype.name = function() {
+        return "Untitled Input";
+      };
+
+      InputType.prototype.icon = function() {
+        return "fa-x";
+      };
+
       InputType.prototype.getNativeType = function() {
         return "";
       };
