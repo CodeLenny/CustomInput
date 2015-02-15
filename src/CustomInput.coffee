@@ -16,16 +16,14 @@ define ->
 			# @viewer = new Viewer()
 			# fields = @viewer.getFields()
 			# for field in fields
-			#	field.getNativeType()
 			#	field = @deserialize(field)
-			# 	field.showViewer() if field.isCustom
+			# 	field.showViewer() if field.isCustom()
 		loadEditor: ->
 			# @editor = new Editor()
 			# @editor.appendToInsertMenu(@extraInputTypes)
 			# @editor.onFieldSelect =>
 			# 	field = @editor.getCurrentField()
-			# 	field.getNativeType()
 			# 	field = @deserialize(field)
-			#	field.showEditor() if field.isCustom
+			#	field.showEditor() if field.isCustom()
 			# 	@editor.appendToFieldTypeMenu(@extraInputTypes)
 	return CustomInput
