@@ -21,6 +21,14 @@
         return true;
       };
 
+      Question.prototype.name = function() {
+        return "True False Question";
+      };
+
+      Question.prototype.icon = function() {
+        return "fa-star-half";
+      };
+
       Question.prototype.customEditorChecker = function(check) {
         if (this.isIn(this.name, ["[True/False]", "[True False]", "[T/F]", "[t/f]"])) {
           return new Question(check);
