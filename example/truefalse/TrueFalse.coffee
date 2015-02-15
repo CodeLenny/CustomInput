@@ -12,6 +12,6 @@ requirejs.config
 require ["CustomInput/CustomInput", "TrueFalse/Question"], (CustomInput, Question) ->
     class TrueFalse extends CustomInput
         constructor: ->
-            @add Question
+            @addType Question
             super yes
     window.truefalse = new TrueFalse()

@@ -24,7 +24,7 @@
       __extends(TrueFalse, _super);
 
       function TrueFalse() {
-        this.add(Question);
+        this.addType(Question);
         TrueFalse.__super__.constructor.call(this, true);
       }
 
