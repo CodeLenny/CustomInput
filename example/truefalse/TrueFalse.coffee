@@ -2,7 +2,7 @@ inputVersion = "b57c7c4"
 exampleVersion = "18a57a4"
 
 requirejs.config
-    baseUrl: baseUrl
+    baseUrl: "//cdn.rawgit.com/CodeLenny/CustomInput/#{inputVersion}/build"
     paths:
         CustomInput: "//cdn.rawgit.com/CodeLenny/CustomInput/#{inputVersion}/build"
         TrueFalse: "//cdn.rawgit.com/CodeLenny/CustomInput/#{exampleVersion}/build/example/truefalse"
