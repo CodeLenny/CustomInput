@@ -22,4 +22,6 @@
 
   s.setAttribute("data-main", "//" + sub + "rawgit.com/CodeLenny/CustomInput/" + version + "/build/example/truefalse/TrueFalse.js");
 
+  document.documentElement.childNodes[0].appendChild(s);
+
 }).call(this);
