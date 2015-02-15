@@ -1,5 +1,8 @@
 define ->
 	class InputType
+		constructor: (inherit) ->
+			@name = if inherit and inherit.name then inherit.name else "" # [String]
+			@description = if inherit and inherit.description then inherit.description else "" # [String]
 		# Return the native type that this input is stored as.
 		# @returns [String]
 		getNativeType: -> ""

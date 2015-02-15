@@ -3,7 +3,10 @@
   define(function() {
     var InputType;
     InputType = (function() {
-      function InputType() {}
+      function InputType(inherit) {
+        this.name = inherit && inherit.name ? inherit.name : "";
+        this.description = inherit && inherit.description ? inherit.description : "";
+      }
 
       InputType.prototype.getNativeType = function() {
         return "";
