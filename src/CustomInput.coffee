@@ -5,8 +5,8 @@ define ["CustomInput/util/InputTypeList"], (InputTypeList) ->
 		constructor: (checkPages = yes) ->
 			if checkPages
 				@launch window.location.pathname
-		@isViewer: (url) -> url.indexOf("viewform") > -1
-		@isEditor: (url) -> url.indexOf("/edit") > -1
+		isViewer: (url) -> url.indexOf("viewform") > -1
+		isEditor: (url) -> url.indexOf("/edit") > -1
 		launch: (url) ->
 			if @isViewer(url)
 				@loadViewer()

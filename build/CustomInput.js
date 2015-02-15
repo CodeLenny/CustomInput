@@ -12,11 +12,11 @@
         }
       }
 
-      CustomInput.isViewer = function(url) {
+      CustomInput.prototype.isViewer = function(url) {
         return url.indexOf("viewform") > -1;
       };
 
-      CustomInput.isEditor = function(url) {
+      CustomInput.prototype.isEditor = function(url) {
         return url.indexOf("/edit") > -1;
       };
 
