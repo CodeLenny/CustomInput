@@ -6,8 +6,12 @@ define ->
 		# Can replace with a function to check if a standard input type should be
 		# converted to custom type.  Return the origional type if it shouldn't be
 		# changed, or a new instance of this type if it should.
-		customEditorChecker: -> no
-		customViewerChecker: -> no
+		# @returns [InputType]
+		# [InputType] check
+		customEditorChecker: (check) -> check
+		# @returns [InputType]
+		# [InputType] check
+		customViewerChecker: (check) -> check
 		# If the input type is custom
 		# @returns [Boolean]
 		custom: -> yes

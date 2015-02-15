@@ -9,12 +9,12 @@
         return "";
       };
 
-      InputType.prototype.customEditorChecker = function() {
-        return false;
+      InputType.prototype.customEditorChecker = function(check) {
+        return check;
       };
 
-      InputType.prototype.customViewerChecker = function() {
-        return false;
+      InputType.prototype.customViewerChecker = function(check) {
+        return check;
       };
 
       InputType.prototype.custom = function() {
