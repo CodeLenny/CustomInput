@@ -82,6 +82,7 @@ require(["CustomInput/CustomInput", "CustomInput/types/InputType"], function(Cus
 
 ## Status
 See the [CHANGELOG](https://github.com/CodeLenny/CustomInput/blob/master/CHANGELOG.md) for full information.
+Also see the [issues](https://github.com/CodeLenny/CustomInput/issues) for information about specific items.
 
 ### Implementation status
 
