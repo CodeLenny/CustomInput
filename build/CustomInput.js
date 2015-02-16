@@ -58,12 +58,12 @@
             if (!field) {
               return;
             }
-            return field = _this.deserialize(field);
+            field = _this.deserialize(field);
+            if (field.isCustom()) {
+              return field.replaceEditor(_this.editor);
+            }
           };
         })(this));
-        if (field.isCustom()) {
-          field.replaceEditor(this.editor);
-        }
         return this.editor.onQuestionTypeDropdown((function(_this) {
           return function(menu) {
             return _this.editor.appendToFieldTypeMenu(menu, _this.extraInputTypes);
