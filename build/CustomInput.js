@@ -56,8 +56,9 @@
             var field;
             field = _this.editor.getCurrentInputType();
             if (!field) {
-
+              return;
             }
+            return field = _this.deserialize(field);
           };
         })(this));
         if (field.isCustom()) {
