@@ -42,6 +42,8 @@ define [
 					id: ":#{@main.prefix}insert#{x}"
 					role: "menuitem"
 					style: "-webkit-user-select: none;"
+				item.mouseover @insertMenuOver
+				item.mouseout @insertMenuOut
 				container = $("<div />").addClass("google-menuitem-content").css("-webkit-user-select", "none")
 				iconHolder = $("<div />").addClass("docs-icon goog-inline-block goog-menuitem-icon").css("-webkit-user-select", "none").attr
 					"aria-hidden": true
@@ -51,6 +53,8 @@ define [
 					"aria-label": type.displayName()
 				letter = $("<span />").addClass("goog-menuitem-mnemonic-hint").css("-webkit-user-select", "none").text(type.displayName().substr(0,1))
 				menu.append item.append container.append label.prepend letter
+		insertMenuOver: -> $(@).addClass("goog-menuitem-highlight")
+		insertMenuOut: -> $(@).removeClass("goog-menuitem-highlight")
 		onQuestionTypeDropdown: (cb) ->
 			$("body").on "mousedown", ".ss-formwidget-container", ->
 				dropdownHolder = $("[id$='fw_tdd']")

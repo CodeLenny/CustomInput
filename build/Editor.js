@@ -43,6 +43,8 @@
             role: "menuitem",
             style: "-webkit-user-select: none;"
           });
+          item.mouseover(this.insertMenuOver);
+          item.mouseout(this.insertMenuOut);
           container = $("<div />").addClass("google-menuitem-content").css("-webkit-user-select", "none");
           iconHolder = $("<div />").addClass("docs-icon goog-inline-block goog-menuitem-icon").css("-webkit-user-select", "none").attr({
             "aria-hidden": true
@@ -56,6 +58,14 @@
           _results.push(menu.append(item.append(container.append(label.prepend(letter)))));
         }
         return _results;
+      };
+
+      Editor.prototype.insertMenuOver = function() {
+        return $(this).addClass("goog-menuitem-highlight");
+      };
+
+      Editor.prototype.insertMenuOut = function() {
+        return $(this).removeClass("goog-menuitem-highlight");
       };
 
       Editor.prototype.onQuestionTypeDropdown = function(cb) {
