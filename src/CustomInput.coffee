@@ -1,10 +1,12 @@
-define ["CustomInput/Editor", "CustomInput/util/InputTypeList"], (Editor, InputTypeList) ->
+define ["jquery", "CustomInput/Editor", "CustomInput/util/InputTypeList"], ($, Editor, InputTypeList) ->
 	class CustomInput
 		# [Boolean] checkPages - If yes, checks the current URL to determine if
 		# the editor or viewer should be parsed and enhanced.
 		constructor: (checkPages = yes, name = "CustomInput", prefix = "ci") ->
 			@name = name
 			@prefix = prefix
+			@$ = $
+			@jQuery = $
 			if checkPages
 				@launch window.location.pathname
 		isViewer: (url) -> url.indexOf("viewform") > -1
