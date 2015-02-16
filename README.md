@@ -19,50 +19,54 @@ By default, the standalone loader adds CustomInput to the global scope and also 
 
 #### CoffeeScript Standalone
 
-	# Configure Require.js
-	requirejs.config
-		baseUrl: "//cdn.rawgit.com/CodeLenny/CustomInput/[tag]/build"
-		paths:
-			CustomInput: "//cdn.rawgit.com/CodeLenny/CustomInput/[tag]/build"
-	# Include the code
-	require ["CustomInput/CustomInput", "CustomInput/types/InputType"], (CustomInput, InputType) ->
-		# Define our new input type
-		class LocationInput extends InputType
-			displayName: -> "Google Maps Location"
-		# Use the library, and load our input type
-		inputManager = new CustomInput yes, "Google Maps", "gmaps"
-		inputManager.add LocationInput
+```coffee
+# Configure Require.js
+requirejs.config
+	baseUrl: "//cdn.rawgit.com/CodeLenny/CustomInput/[tag]/build"
+	paths:
+		CustomInput: "//cdn.rawgit.com/CodeLenny/CustomInput/[tag]/build"
+# Include the code
+require ["CustomInput/CustomInput", "CustomInput/types/InputType"], (CustomInput, InputType) ->
+	# Define our new input type
+	class LocationInput extends InputType
+		displayName: -> "Google Maps Location"
+	# Use the library, and load our input type
+	inputManager = new CustomInput yes, "Google Maps", "gmaps"
+	inputManager.add LocationInput
+```
 
 #### JavaScript Standalone
 
 Please note that the following JavaScript has been written by someone more familiar with CoffeeScript's object orientation than in JavaScript, and the following is untested code.
 
-	// CoffeeScript object-oriented library.  Feel free to replace with your own method of object orientation.
-	var __hasProp = {}.hasOwnProperty;
-    var __extends = function(child, parent) { for (var key in parent) { if (__hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; };
-    // Configure Require.js
-	requirejs.config({
-	  baseUrl: "//cdn.rawgit.com/CodeLenny/CustomInput/[tag]/build",
-	  paths: {
-	    CustomInput: "//cdn.rawgit.com/CodeLenny/CustomInput/[tag]/build"
-	  }
-	});
-	// Include the code
-	require(["CustomInput/CustomInput", "CustomInput/types/InputType"], function(CustomInput, InputType) {
-		// Define our new input type
-		var LocationInput = (function(_super) {
-			__extends(LocationInput, _super);
-			function LocationInput() {
-				Question.__super__.constructor.call(this, inherit);
-			}
-			Question.prototype.displayName = function() {
-				return "Google Maps Location";
-			};
-			return LocationInput;
-		})(InputType);
-		var inputManager = new CustomInput(yes, "Google Maps", "gmaps");
-		inputManager.add(LocationInput);
-	});
+```js
+// CoffeeScript object-oriented library.  Feel free to replace with your own method of object orientation.
+var __hasProp = {}.hasOwnProperty;
+var __extends = function(child, parent) { for (var key in parent) { if (__hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; };
+// Configure Require.js
+requirejs.config({
+  baseUrl: "//cdn.rawgit.com/CodeLenny/CustomInput/[tag]/build",
+  paths: {
+    CustomInput: "//cdn.rawgit.com/CodeLenny/CustomInput/[tag]/build"
+  }
+});
+// Include the code
+require(["CustomInput/CustomInput", "CustomInput/types/InputType"], function(CustomInput, InputType) {
+	// Define our new input type
+	var LocationInput = (function(_super) {
+		__extends(LocationInput, _super);
+		function LocationInput() {
+			Question.__super__.constructor.call(this, inherit);
+		}
+		Question.prototype.displayName = function() {
+			return "Google Maps Location";
+		};
+		return LocationInput;
+	})(InputType);
+	var inputManager = new CustomInput(yes, "Google Maps", "gmaps");
+	inputManager.add(LocationInput);
+});
+```
 
 ## License
 Copyright 2015 Ryan Leonard.
