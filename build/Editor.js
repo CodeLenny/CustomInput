@@ -25,7 +25,7 @@
         if (!this.main.fontAwesomeAdded) {
           this.addFontAwesome();
         }
-        menu = $("#\\:8q").parent();
+        menu = $(".goog-menuheader.goog-menuheader-disabled:contains('Basic')").parent();
         $("#\\:8q " + this.main.prefix + "insertMenu").remove();
         $("#\\:8q [id^='\\:" + this.main.prefix + "insert']").remove();
         header = $("<div />").text(this.main.name).addClass("goog-menuheader goog-menuheader-disabled").attr({

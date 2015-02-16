@@ -12,7 +12,7 @@ define ["jquery", "CustomInput/types/InputType", "CustomInput/util/InputTypeList
 		# [InputTypeList] types
 		appendToInsertMenu: (types) ->
 			@addFontAwesome() if not @main.fontAwesomeAdded
-			menu = $("#\\:8q").parent()
+			menu = $(".goog-menuheader.goog-menuheader-disabled:contains('Basic')").parent()
 			# Remove old headers and items
 			$("#\\:8q #{@main.prefix}insertMenu").remove()
 			$("#\\:8q [id^='\\:#{@main.prefix}insert']").remove()
