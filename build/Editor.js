@@ -73,6 +73,7 @@
 
       Editor.prototype.appendToFieldTypeMenu = function(menu, types) {
         var item, text, type, typeObj, x, _i, _len, _results;
+        $("[id^=':" + this.main.prefix + "menuItem']", menu).remove();
         if (!this.main.fontAwesomeAdded) {
           this.addFontAwesome();
         }

@@ -47,6 +47,7 @@ define ["jquery", "CustomInput/types/InputType", "CustomInput/util/InputTypeList
 					menu = menuElement.parent()
 					cb menu
 		appendToFieldTypeMenu: (menu, types) ->
+			$("[id^=':#{@main.prefix}menuItem']", menu).remove()
 			@addFontAwesome() if not @main.fontAwesomeAdded
 			for typeObj, x in types
 				type = new typeObj() # [InputType]
