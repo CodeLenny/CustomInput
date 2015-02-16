@@ -63,6 +63,7 @@ require(["CustomInput/CustomInput", "CustomInput/types/InputType"], function(Cus
 		};
 		return LocationInput;
 	})(InputType);
+	// Use the library, and load our input type
 	var inputManager = new CustomInput(yes, "Google Maps", "gmaps");
 	inputManager.add(LocationInput);
 });
