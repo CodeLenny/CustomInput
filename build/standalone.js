@@ -8,7 +8,7 @@
 
   if (github) {
     repo = "CodeLenny";
-    version = "0.1";
+    version = "0.1.0";
     baseUrl = "//cdn.rawgit.com/" + repo + "/CustomInput/" + version + "/build/";
   } else {
     baseUrl = "";

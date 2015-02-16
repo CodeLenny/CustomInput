@@ -10,7 +10,7 @@ baseUrl = ""
 
 if github
     repo = "CodeLenny"
-    version = "0.1" # or replace with a commit hash
+    version = "0.1.0" # or replace with a commit hash
     baseUrl = "//cdn.rawgit.com/#{repo}/CustomInput/#{version}/build/"
 else
     baseUrl = ""

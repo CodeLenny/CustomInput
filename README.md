@@ -33,9 +33,9 @@ By default, the standalone loader adds CustomInput to the global scope and also 
 ```coffee
 # Configure Require.js
 requirejs.config
-	baseUrl: "//cdn.rawgit.com/CodeLenny/CustomInput/[tag]/build"
+	baseUrl: "//cdn.rawgit.com/CodeLenny/CustomInput/0.1.0/build"
 	paths:
-		CustomInput: "//cdn.rawgit.com/CodeLenny/CustomInput/[tag]/build"
+		CustomInput: "//cdn.rawgit.com/CodeLenny/CustomInput/0.1.0/build"
 # Include the code
 require ["CustomInput/CustomInput", "CustomInput/types/InputType"], (CustomInput, InputType) ->
 	# Define our new input type
@@ -56,9 +56,9 @@ var __hasProp = {}.hasOwnProperty;
 var __extends = function(child, parent) { for (var key in parent) { if (__hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; };
 // Configure Require.js
 requirejs.config({
-  baseUrl: "//cdn.rawgit.com/CodeLenny/CustomInput/[tag]/build",
+  baseUrl: "//cdn.rawgit.com/CodeLenny/CustomInput/0.1.0/build",
   paths: {
-    CustomInput: "//cdn.rawgit.com/CodeLenny/CustomInput/[tag]/build"
+    CustomInput: "//cdn.rawgit.com/CodeLenny/CustomInput/0.1.0/build"
   }
 });
 // Include the code
@@ -79,6 +79,69 @@ require(["CustomInput/CustomInput", "CustomInput/types/InputType"], function(Cus
 	inputManager.add(LocationInput);
 });
 ```
+
+## Status
+See the [CHANGELOG](https://github.com/CodeLenny/CustomInput/blob/master/CHANGELOG.md) for full information.
+
+### Implementation status
+
+- [ ] Native input types
+  - [x] Define types, global properties
+  - [ ] Add getter/setter functions for the individual types
+- [ ] Manager/overall code
+  - [x] Require.js structure
+  - [x] Constructor
+  - [x] Page detection (by URL)
+  - [x] Adding types
+  - [ ] Adding custom fields
+  - [x] Parse editor structure
+  - [ ] Parse viewer structure
+    - [x] Outline framework
+    - [ ] Finalize and debug
+- [ ] Editor Integration
+  - [ ] Insert menu
+    - [x] List types
+    - [ ] Add icons (not priority)
+    - [ ] Trigger on click
+  - [ ] Question type dropdown
+    - [x] List types
+    - [ ] Trigger on click
+  - [ ] Add Item dropdown (not priority)
+    - [ ] List types
+    - [ ] Trigger on click
+  - [ ] Custom fields
+- [ ] Viewer Integration
+  - [ ] Locate items
+  - [ ] Detect native types
+  - [ ] Add binding to replace interface for custom types
+  - [ ] Manage custom fields (not priority)
+  - [ ] Manage save and submit
+- [ ] Results (Google Sheet of Responses)
+  - [ ] Add triggers
+  - [ ] Search field types
+  - [ ] Add hook for custom display functions
+
+### Implementation of example ([TrueFalse](https://github.com/CodeLenny/CustomInput/tree/master/example/truefalse))
+
+#### True/False Question Type
+
+- [ ] Editor
+  - [x] Define item name and icon to add to menus
+  - [ ] Write code to trigger when item added
+  - [ ] Write code to trigger when converting item type (when question type dropdown is changed inside the item editor)
+  - [ ] Write editor interface (define fields, disabled preview of interface)
+- [ ] Viewer
+  - [ ] Viewer interface
+- [ ] Results
+  - [ ] Add basic effect for the results
+
+#### Extra Field
+
+- [ ] Construction (add to CustomInput manger)
+- [ ] Editor apperance/bound functions
+- [ ] Viewer bound function
+- [ ] Results function (if needed)
+
 
 ## License
 Copyright 2015 Ryan Leonard.
