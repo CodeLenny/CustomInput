@@ -54,9 +54,15 @@
         this.editor.onFieldSelect((function(_this) {
           return function() {
             var field;
-            return field = _this.editor.getCurrentField();
+            field = _this.editor.getCurrentInputType();
+            if (!field) {
+
+            }
           };
         })(this));
+        if (field.isCustom()) {
+          field.replaceEditor(this.editor);
+        }
         return this.editor.onQuestionTypeDropdown((function(_this) {
           return function(menu) {
             return _this.editor.appendToFieldTypeMenu(menu, _this.extraInputTypes);

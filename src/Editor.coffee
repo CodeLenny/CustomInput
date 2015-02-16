@@ -1,4 +1,17 @@
-define ["jquery", "CustomInput/types/InputType", "CustomInput/util/InputTypeList"], ($, InputType, InputTypeList) ->
+define [
+	"jquery",
+	"CustomInput/types/InputType",
+	"CustomInput/util/InputTypeList",
+	"CustomInput/types/TextInput",
+	"CustomInput/types/ParagraphInput",
+	"CustomInput/types/MultipleChoiceInput",
+	"CustomInput/types/CheckboxesInput",
+	"CustomInput/types/ChooseInput",
+	"CustomInput/types/ScaleInput",
+	"CustomInput/types/GridInput",
+	"CustomInput/types/DateInput",
+	"CustomInput/types/TimeInput"
+], ($, InputType, InputTypeList, TextInput, ParagraphInput, MultipleChoiceInput, CheckboxesInput, ChooseInput, ScaleInput, GridInput, DateInput, TimeInput) ->
 	class Editor
 		constructor: (ci) ->
 			@main = ci # [CustomInput]
@@ -67,11 +80,36 @@ define ["jquery", "CustomInput/types/InputType", "CustomInput/util/InputTypeList
 			allFields.index current
 		getCurrentField: ->
 			$(".ss-formwidget-container-editor")
+		getCurrentInputType: ->
+			el = @getCurrentField()
+			name = $("[id$=':fw_tf]", el).val()
+			description = $("[id$=':fw_htf]", el).val()
+			Type = switch $(".ss-formwidget-container-editor [id$='fw_tdd'] .goog-flat-menu-button-caption").text()
+				when "Text"
+					TextInput
+				when "Paragraph text"
+					ParagraphInput
+				when "Multiple Choice"
+					MultipleChoiceInput
+				when "Checkboxes"
+					CheckboxesInput
+				when "Choose from a list"
+					ChooseInput
+				when "Scale"
+					ScaleInput
+				when "Grid"
+					GridInput
+				when "Date"
+					DateInput
+				when "Time"
+					TimeInput
+			return if not Type
+			type = new Type({name: name, description: description})
 		#loadEditor: ->
 			# @editor = new Editor()
 			# @editor.appendToInsertMenu(@extraInputTypes)
 			# @editor.onFieldSelect =>
-			# 	field = @editor.getCurrentField()
+			# 	field = @editor.getCurrentInputType()
 			# 	field = @deserialize(field)
 			#	field.showEditor() if field.isCustom()
 			# @editor.onQuestionTypeDropdown ->

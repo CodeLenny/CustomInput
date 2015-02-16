@@ -22,6 +22,8 @@ define ->
 		custom: -> yes
 		# Custom inputs can define a function to replace the editor preview
 		# with their own code.
-		replaceEditor: -> no
-		replaceViewer: -> no
+		# [Editor] editor
+		replaceEditor: (editor) -> no
+		# [Viewer] viewer
+		replaceViewer: (viewer) -> no
 	return InputType

@@ -32,11 +32,11 @@
         return true;
       };
 
-      InputType.prototype.replaceEditor = function() {
+      InputType.prototype.replaceEditor = function(editor) {
         return false;
       };
 
-      InputType.prototype.replaceViewer = function() {
+      InputType.prototype.replaceViewer = function(viewer) {
         return false;
       };
 

@@ -25,14 +25,15 @@ define ["jquery", "CustomInput/Editor", "CustomInput/util/InputTypeList"], ($, E
 			# fields = @viewer.getFields()
 			# for field in fields
 			#	field = @deserialize(field)
-			# 	field.showViewer() if field.isCustom()
+			# 	field.replaceViewer viewer if field.isCustom()
 		loadEditor: ->
 			@editor = new Editor @
 			@editor.appendToInsertMenu(@extraInputTypes)
 			@editor.onFieldSelect =>
-			 	field = @editor.getCurrentField()
+			 	field = @editor.getCurrentInputType()
+			 	return if not field
 			# 	field = @deserialize(field)
-			#	field.showEditor() if field.isCustom()
+				field.replaceEditor @editor if field.isCustom()
 			@editor.onQuestionTypeDropdown (menu) =>
 				@editor.appendToFieldTypeMenu menu, @extraInputTypes
 	return CustomInput
