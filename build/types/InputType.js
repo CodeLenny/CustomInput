@@ -20,11 +20,7 @@
         return "";
       };
 
-      InputType.prototype.customEditorChecker = function(check) {
-        return check;
-      };
-
-      InputType.prototype.customViewerChecker = function(check) {
+      InputType.customChecker = function(check) {
         return check;
       };
 

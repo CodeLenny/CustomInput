@@ -36,4 +36,7 @@ define ["jquery", "CustomInput/Editor", "CustomInput/util/InputTypeList"], ($, E
 				field.replaceEditor @editor if field.isCustom()
 			@editor.onQuestionTypeDropdown (menu) =>
 				@editor.appendToFieldTypeMenu menu, @extraInputTypes
+		deserialize: (field) ->
+			for type in @extraInputTypes
+				field = type.customChecker field
 	return CustomInput
