@@ -3,6 +3,11 @@ define ["jquery", "CustomInput/types/InputType", "CustomInput/util/InputTypeList
 		constructor: (ci) ->
 			@main = ci # [CustomInput]
 			@main.fontAwesomeAdded ?= no
+		addFontAwesome: ->
+			$("<link />").attr
+				rel: "stylesheet"
+				href: "//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css"
+			@main.fontAwesomeAdded = yes
 		# [InputTypeList] types
 		appendToInsertMenu: (types) ->
 			@addFontAwesome() if not @main.fontAwesomeAdded
@@ -32,11 +37,6 @@ define ["jquery", "CustomInput/types/InputType", "CustomInput/util/InputTypeList
 					"aria-label": type.displayName()
 				letter = $("<span />").addClass("goog-menuitem-mnemonic-hint").css("-webkit-user-select", "none").text(type.displayName().substr(0,1))
 				menu.append item.append container.append label.prepend letter
-		addFontAwesome: ->
-			$("<link />").attr
-				rel: "stylesheet"
-				href: "//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css"
-			@main.fontAwesomeAdded = yes
 		#loadEditor: ->
 			# @editor = new Editor()
 			# @editor.appendToInsertMenu(@extraInputTypes)

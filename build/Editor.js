@@ -11,6 +11,14 @@
         }
       }
 
+      Editor.prototype.addFontAwesome = function() {
+        $("<link />").attr({
+          rel: "stylesheet",
+          href: "//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css"
+        });
+        return this.main.fontAwesomeAdded = true;
+      };
+
       Editor.prototype.appendToInsertMenu = function(types) {
         var container, header, icon, iconHolder, item, label, letter, menu, type, typeObj, x, _i, _len, _results;
         if (!this.main.fontAwesomeAdded) {
@@ -47,14 +55,6 @@
           _results.push(menu.append(item.append(container.append(label.prepend(letter)))));
         }
         return _results;
-      };
-
-      Editor.prototype.addFontAwesome = function() {
-        $("<link />").attr({
-          rel: "stylesheet",
-          href: "//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css"
-        });
-        return this.main.fontAwesomeAdded = true;
       };
 
       return Editor;
