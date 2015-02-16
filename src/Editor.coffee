@@ -1,4 +1,4 @@
-define ["jQuery", "CustomInput/InputType", "CustomInput/util/InputTypeList"], ($, InputType, InputTypeList) ->
+define ["jquery", "CustomInput/InputType", "CustomInput/util/InputTypeList"], ($, InputType, InputTypeList) ->
 	class Editor
 		constructor: (ci) ->
 			@main = ci # [CustomInput]
