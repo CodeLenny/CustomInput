@@ -72,14 +72,13 @@
       };
 
       CustomInput.prototype.deserialize = function(field) {
-        var type, _i, _len, _ref, _results;
+        var type, _i, _len, _ref;
         _ref = this.extraInputTypes;
-        _results = [];
         for (_i = 0, _len = _ref.length; _i < _len; _i++) {
           type = _ref[_i];
-          _results.push(field = type.customChecker(field, type));
+          field = type.customChecker(field, type);
         }
-        return _results;
+        return field;
       };
 
       return CustomInput;

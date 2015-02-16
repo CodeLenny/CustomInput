@@ -39,4 +39,5 @@ define ["jquery", "CustomInput/Editor", "CustomInput/util/InputTypeList"], ($, E
 		deserialize: (field) ->
 			for type in @extraInputTypes
 				field = type.customChecker field, type
+			return field
 	return CustomInput
