@@ -9,6 +9,7 @@
         if ((_base = this.main).fontAwesomeAdded == null) {
           _base.fontAwesomeAdded = false;
         }
+        this.currentField = null;
       }
 
       Editor.prototype.addFontAwesome = function() {
@@ -55,6 +56,59 @@
           _results.push(menu.append(item.append(container.append(label.prepend(letter)))));
         }
         return _results;
+      };
+
+      Editor.prototype.onQuestionTypeDropdown = function(cb) {
+        var currentMenuElement, dropdownHolder, menu, menuElement;
+        $("body").on("mousedown", ".ss-formwidget-container", function() {});
+        dropdownHolder = $("[id$='fw_tdd']");
+        currentMenuElement = dropdownHolder.attr("aria-activedescendant");
+        menuElement = $("[id='" + currentMenuElement + "']");
+        if (menuElement.parents(".goog-menu").length > 0) {
+          menu = menuElement.parent();
+          return cb(menu);
+        }
+      };
+
+      Editor.prototype.appendToFieldTypeMenu = function(menu, types) {
+        var item, text, type, typeObj, x, _i, _len, _results;
+        if (!this.main.fontAwesomeAdded) {
+          this.addFontAwesome();
+        }
+        _results = [];
+        for (x = _i = 0, _len = types.length; _i < _len; x = ++_i) {
+          typeObj = types[x];
+          type = new typeObj();
+          item = $("<div />").addClass("goog-menuitem").css("-webkit-user-select", "none").attr({
+            id: ":" + this.main.prefix + "menuItem" + x,
+            role: "menuitem"
+          });
+          text = $("<div />").addClass("goog-menuitem-content").css("-webkit-user-select", "none").text(type.displayName());
+          _results.push(menu.append(item.append(text)));
+        }
+        return _results;
+      };
+
+      Editor.prototype.onFieldSelect = function(cb) {
+        return $("body").on("mousedown", ".ss-formwidget-container", (function(_this) {
+          return function() {
+            if (!_this.currentField || _this.currentField !== _this.getCurrentFieldPosition()) {
+              _this.currentField = _this.getCurrentFieldPosition();
+              return cb();
+            }
+          };
+        })(this));
+      };
+
+      Editor.prototype.getCurrentFieldPosition = function() {
+        var allFields, current;
+        allFields = $(".ss-formwidget-container");
+        current = this.getCurrentField();
+        return allFields.index(current);
+      };
+
+      Editor.prototype.getCurrentField = function() {
+        return $(".ss-formwidget-container-editor");
       };
 
       return Editor;

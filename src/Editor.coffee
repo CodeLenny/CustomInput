@@ -3,6 +3,7 @@ define ["jquery", "CustomInput/types/InputType", "CustomInput/util/InputTypeList
 		constructor: (ci) ->
 			@main = ci # [CustomInput]
 			@main.fontAwesomeAdded ?= no
+			@currentField = null
 		addFontAwesome: ->
 			$("<link />").attr
 				rel: "stylesheet"
@@ -37,6 +38,34 @@ define ["jquery", "CustomInput/types/InputType", "CustomInput/util/InputTypeList
 					"aria-label": type.displayName()
 				letter = $("<span />").addClass("goog-menuitem-mnemonic-hint").css("-webkit-user-select", "none").text(type.displayName().substr(0,1))
 				menu.append item.append container.append label.prepend letter
+		onQuestionTypeDropdown: (cb) ->
+			$("body").on "mousedown", ".ss-formwidget-container", ->
+			dropdownHolder = $("[id$='fw_tdd']")
+			currentMenuElement = dropdownHolder.attr("aria-activedescendant")
+			menuElement = $("[id='" + currentMenuElement + "']")
+			if menuElement.parents(".goog-menu").length > 0
+				menu = menuElement.parent()
+				cb menu
+		appendToFieldTypeMenu: (menu, types) ->
+			@addFontAwesome() if not @main.fontAwesomeAdded
+			for typeObj, x in types
+				type = new typeObj() # [InputType]
+				item = $("<div />").addClass("goog-menuitem").css("-webkit-user-select", "none").attr
+					id: ":#{@main.prefix}menuItem#{x}"
+					role: "menuitem"
+				text = $("<div />").addClass("goog-menuitem-content").css("-webkit-user-select", "none").text(type.displayName())
+				menu.append item.append text
+		onFieldSelect: (cb) ->
+			$("body").on "mousedown", ".ss-formwidget-container", =>
+				if not @currentField or @currentField isnt @getCurrentFieldPosition()
+					@currentField = @getCurrentFieldPosition()
+					cb()
+		getCurrentFieldPosition: ->
+			allFields = $(".ss-formwidget-container")
+			current = @getCurrentField()
+			allFields.index current
+		getCurrentField: ->
+			$(".ss-formwidget-container-editor")
 		#loadEditor: ->
 			# @editor = new Editor()
 			# @editor.appendToInsertMenu(@extraInputTypes)
@@ -44,5 +73,7 @@ define ["jquery", "CustomInput/types/InputType", "CustomInput/util/InputTypeList
 			# 	field = @editor.getCurrentField()
 			# 	field = @deserialize(field)
 			#	field.showEditor() if field.isCustom()
+			# @editor.onQuestionTypeDropdown ->
 			# 	@editor.appendToFieldTypeMenu(@extraInputTypes)
+
 	return Editor

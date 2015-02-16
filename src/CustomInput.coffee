@@ -29,9 +29,10 @@ define ["jquery", "CustomInput/Editor", "CustomInput/util/InputTypeList"], ($, E
 		loadEditor: ->
 			@editor = new Editor @
 			@editor.appendToInsertMenu(@extraInputTypes)
-			# @editor.onFieldSelect =>
-			# 	field = @editor.getCurrentField()
+			@editor.onFieldSelect =>
+			 	field = @editor.getCurrentField()
 			# 	field = @deserialize(field)
 			#	field.showEditor() if field.isCustom()
-			# 	@editor.appendToFieldTypeMenu(@extraInputTypes)
+			@editor.onQuestionTypeDropdown (menu) =>
+				@editor.appendToFieldTypeMenu menu, @extraInputTypes
 	return CustomInput

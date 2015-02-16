@@ -50,7 +50,18 @@
 
       CustomInput.prototype.loadEditor = function() {
         this.editor = new Editor(this);
-        return this.editor.appendToInsertMenu(this.extraInputTypes);
+        this.editor.appendToInsertMenu(this.extraInputTypes);
+        this.editor.onFieldSelect((function(_this) {
+          return function() {
+            var field;
+            return field = _this.editor.getCurrentField();
+          };
+        })(this));
+        return this.editor.onQuestionTypeDropdown((function(_this) {
+          return function(menu) {
+            return _this.editor.appendToFieldTypeMenu(menu, _this.extraInputTypes);
+          };
+        })(this));
       };
 
       return CustomInput;
