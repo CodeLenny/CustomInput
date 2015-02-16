@@ -13,7 +13,7 @@ define ["jquery", "CustomInput/types/InputType", "CustomInput/util/InputTypeList
 				style: "-webkit-user-select: none;"
 			menu.append(header)
 			for x in [0...types.length]
-				type = types.get(x) # [InputType]
+				type = types[x] # [InputType]
 				item = $("<div />").addClass("goog-menuitem apps-menuitem").attr
 					id: ":#{@main.prefix}insert#{x}"
 					role: "menuitem"
