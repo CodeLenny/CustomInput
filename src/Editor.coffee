@@ -40,12 +40,12 @@ define ["jquery", "CustomInput/types/InputType", "CustomInput/util/InputTypeList
 				menu.append item.append container.append label.prepend letter
 		onQuestionTypeDropdown: (cb) ->
 			$("body").on "mousedown", ".ss-formwidget-container", ->
-			dropdownHolder = $("[id$='fw_tdd']")
-			currentMenuElement = dropdownHolder.attr("aria-activedescendant")
-			menuElement = $("[id='" + currentMenuElement + "']")
-			if menuElement.parents(".goog-menu").length > 0
-				menu = menuElement.parent()
-				cb menu
+				dropdownHolder = $("[id$='fw_tdd']")
+				currentMenuElement = dropdownHolder.attr("aria-activedescendant")
+				menuElement = $("[id='" + currentMenuElement + "']")
+				if menuElement.parents(".goog-menu").length > 0
+					menu = menuElement.parent()
+					cb menu
 		appendToFieldTypeMenu: (menu, types) ->
 			@addFontAwesome() if not @main.fontAwesomeAdded
 			for typeObj, x in types

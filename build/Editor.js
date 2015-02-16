@@ -59,15 +59,16 @@
       };
 
       Editor.prototype.onQuestionTypeDropdown = function(cb) {
-        var currentMenuElement, dropdownHolder, menu, menuElement;
-        $("body").on("mousedown", ".ss-formwidget-container", function() {});
-        dropdownHolder = $("[id$='fw_tdd']");
-        currentMenuElement = dropdownHolder.attr("aria-activedescendant");
-        menuElement = $("[id='" + currentMenuElement + "']");
-        if (menuElement.parents(".goog-menu").length > 0) {
-          menu = menuElement.parent();
-          return cb(menu);
-        }
+        return $("body").on("mousedown", ".ss-formwidget-container", function() {
+          var currentMenuElement, dropdownHolder, menu, menuElement;
+          dropdownHolder = $("[id$='fw_tdd']");
+          currentMenuElement = dropdownHolder.attr("aria-activedescendant");
+          menuElement = $("[id='" + currentMenuElement + "']");
+          if (menuElement.parents(".goog-menu").length > 0) {
+            menu = menuElement.parent();
+            return cb(menu);
+          }
+        });
       };
 
       Editor.prototype.appendToFieldTypeMenu = function(menu, types) {
