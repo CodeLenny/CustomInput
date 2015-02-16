@@ -41,7 +41,6 @@
             "aria-label": item.name()
           });
           letter = $("<span />").addClass("goog-menuitem-mnemonic-hint").css("-webkit-user-select", "none").text(item.name.substr(0, 1));
-          console.log(item);
           _results.push(menu.append(item.append(container.append(label.prepend(letter)))));
         }
         return _results;
