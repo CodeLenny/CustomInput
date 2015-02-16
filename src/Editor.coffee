@@ -14,8 +14,8 @@ define ["jquery", "CustomInput/types/InputType", "CustomInput/util/InputTypeList
 			@addFontAwesome() if not @main.fontAwesomeAdded
 			menu = $(".goog-menuheader.goog-menuheader-disabled:contains('Basic')").parent()
 			# Remove old headers and items
-			$("#\\:8q #{@main.prefix}insertMenu").remove()
-			$("#\\:8q [id^='\\:#{@main.prefix}insert']").remove()
+			$(menu, "#{@main.prefix}insertMenu").remove()
+			$(menu, "[id^='\\:#{@main.prefix}insert']").remove()
 			# Add new header
 			header = $("<div />").text(@main.name).addClass("goog-menuheader goog-menuheader-disabled").attr
 				id: ":#{@main.prefix}insertMenu"
