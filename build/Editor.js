@@ -25,7 +25,7 @@
         menu.append(header);
         _results = [];
         for (x = _i = 0, _ref = types.length - 1; 0 <= _ref ? _i < _ref : _i > _ref; x = 0 <= _ref ? ++_i : --_i) {
-          type = types[x];
+          type = new types[x]();
           item = $("<div />").addClass("goog-menuitem apps-menuitem").attr({
             id: ":" + this.main.prefix + "insert" + x,
             role: "menuitem",
