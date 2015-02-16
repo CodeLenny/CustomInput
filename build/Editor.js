@@ -12,7 +12,7 @@
       }
 
       Editor.prototype.appendToInsertMenu = function(types) {
-        var container, header, icon, iconHolder, item, label, letter, menu, type, typeObj, _i, _len, _results;
+        var container, header, icon, iconHolder, item, label, letter, menu, type, typeObj, x, _i, _len, _results;
         if (!this.main.fontAwesomeAdded) {
           this.addFontAwesome();
         }
@@ -24,8 +24,8 @@
         });
         menu.append(header);
         _results = [];
-        for (_i = 0, _len = types.length; _i < _len; _i++) {
-          typeObj = types[_i];
+        for (x = _i = 0, _len = types.length; _i < _len; x = ++_i) {
+          typeObj = types[x];
           type = new typeObj();
           item = $("<div />").addClass("goog-menuitem apps-menuitem").attr({
             id: ":" + this.main.prefix + "insert" + x,
