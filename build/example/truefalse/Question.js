@@ -28,7 +28,7 @@
         return "star-half";
       };
 
-      Question.customEditorChecker = function(check) {
+      Question.customChecker = function(check) {
         if (this.isIn(this.name, ["[True/False]", "[True False]", "[T/F]", "[t/f]"])) {
           return new Question(check);
         }
