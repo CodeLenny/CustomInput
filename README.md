@@ -33,9 +33,9 @@ By default, the standalone loader adds CustomInput to the global scope and also 
 ```coffee
 # Configure Require.js
 requirejs.config
-	baseUrl: "//cdn.rawgit.com/CodeLenny/CustomInput/0.1.0/build"
+	baseUrl: "//cdn.rawgit.com/CodeLenny/CustomInput/0.1.1/build"
 	paths:
-		CustomInput: "//cdn.rawgit.com/CodeLenny/CustomInput/0.1.0/build"
+		CustomInput: "//cdn.rawgit.com/CodeLenny/CustomInput/0.1.1/build"
 # Include the code
 require ["CustomInput/CustomInput", "CustomInput/types/InputType"], (CustomInput, InputType) ->
 	# Define our new input type
@@ -56,9 +56,9 @@ var __hasProp = {}.hasOwnProperty;
 var __extends = function(child, parent) { for (var key in parent) { if (__hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; };
 // Configure Require.js
 requirejs.config({
-  baseUrl: "//cdn.rawgit.com/CodeLenny/CustomInput/0.1.0/build",
+  baseUrl: "//cdn.rawgit.com/CodeLenny/CustomInput/0.1.1/build",
   paths: {
-    CustomInput: "//cdn.rawgit.com/CodeLenny/CustomInput/0.1.0/build"
+    CustomInput: "//cdn.rawgit.com/CodeLenny/CustomInput/0.1.1/build"
   }
 });
 // Include the code
