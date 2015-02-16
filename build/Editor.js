@@ -17,6 +17,8 @@
           this.addFontAwesome();
         }
         menu = $("#\\:8q").parent();
+        $("#\\:8q " + this.main.prefix + "insertMenu").remove();
+        $("#\\:8q [id^='\\:" + this.main.prefix + "insert']").remove();
         header = $("<div />").text(this.main.name).addClass("goog-menuheader goog-menuheader-disabled").attr({
           id: ":" + this.main.prefix + "insertMenu",
           "aria-disabled": "true",

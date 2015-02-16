@@ -7,11 +7,16 @@ define ["jquery", "CustomInput/types/InputType", "CustomInput/util/InputTypeList
 		appendToInsertMenu: (types) ->
 			@addFontAwesome() if not @main.fontAwesomeAdded
 			menu = $("#\\:8q").parent()
+			# Remove old headers and items
+			$("#\\:8q #{@main.prefix}insertMenu").remove()
+			$("#\\:8q [id^='\\:#{@main.prefix}insert']").remove()
+			# Add new header
 			header = $("<div />").text(@main.name).addClass("goog-menuheader goog-menuheader-disabled").attr
 				id: ":#{@main.prefix}insertMenu"
 				"aria-disabled": "true"
 				style: "-webkit-user-select: none;"
 			menu.append(header)
+			# Add items
 			for typeObj, x in types
 				type = new typeObj() # [InputType]
 				item = $("<div />").addClass("goog-menuitem apps-menuitem").attr
