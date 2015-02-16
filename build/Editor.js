@@ -26,8 +26,8 @@
           this.addFontAwesome();
         }
         menu = $(".goog-menuheader.goog-menuheader-disabled:contains('Basic')").parent();
-        $(menu, "" + this.main.prefix + "insertMenu").remove();
-        $(menu, "[id^='\\:" + this.main.prefix + "insert']").remove();
+        $("" + this.main.prefix + "insertMenu", menu).remove();
+        $("[id^='\\:" + this.main.prefix + "insert']", menu).remove();
         header = $("<div />").text(this.main.name).addClass("goog-menuheader goog-menuheader-disabled").attr({
           id: ":" + this.main.prefix + "insertMenu",
           "aria-disabled": "true",
