@@ -35,7 +35,7 @@
         return check;
       };
 
-      Question.prototype.isIn = function(str, phrases) {
+      Question.isIn = function(str, phrases) {
         var phrase, _i, _len;
         for (_i = 0, _len = phrases.length; _i < _len; _i++) {
           phrase = phrases[_i];
