@@ -1,4 +1,4 @@
-inputVersion = "7e81c55"
+inputVersion = "5186784"
 exampleVersion = "6e6ace7"
 
 requirejs.config
@@ -13,5 +13,5 @@ require ["CustomInput/CustomInput", "TrueFalse/Question"], (CustomInput, Questio
     class TrueFalse extends CustomInput
         constructor: ->
             @addType Question
-            super yes
+            super yes, "True False", "tf"
     window.truefalse = new TrueFalse()
