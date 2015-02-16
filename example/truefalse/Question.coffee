@@ -2,7 +2,6 @@ define ["CustomInput/types/InputType"], (InputType) ->
 	class Question extends InputType
 		constructor: (inherit) ->
 			super inherit
-			@customViewerChecker = @customEditorChecker
 		nativeType: -> "Scale"
 		custom: -> yes
 		displayName: -> "True False Question"
