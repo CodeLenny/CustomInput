@@ -1,4 +1,4 @@
-inputVersion = "ee54111"
+inputVersion = "25636ef"
 exampleVersion = "a138b54"
 
 requirejs.config
