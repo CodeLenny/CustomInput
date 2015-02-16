@@ -26,6 +26,7 @@ define ["jquery", "CustomInput/types/InputType", "CustomInput/util/InputTypeList
 				label = $("<span />").addClass("google-menuitem-label").css("-webkit-user-select", "none").text(item.name().substr(1)).attr
 					"aria-label": item.name()
 				letter = $("<span />").addClass("goog-menuitem-mnemonic-hint").css("-webkit-user-select", "none").text(item.name.substr(0,1))
+				console.log item
 				menu.append item.append container.append label.prepend letter
 		addFontAwesome: ->
 			$("<link />").attr
