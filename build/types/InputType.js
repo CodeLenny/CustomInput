@@ -20,7 +20,7 @@
         return "";
       };
 
-      InputType.customChecker = function(check) {
+      InputType.customChecker = function(check, InputType) {
         return check;
       };
 

@@ -6,7 +6,7 @@ define ["CustomInput/types/InputType"], (InputType) ->
 		custom: -> yes
 		displayName: -> "True False Question"
 		displayIcon: -> "star-half"
-		@customChecker: (check) ->
+		@customChecker: (check, Question) ->
 			if @isIn(@name, ["[True/False]", "[True False]", "[T/F]", "[t/f]"])
 				return new Question(check)
 			return check

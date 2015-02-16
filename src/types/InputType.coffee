@@ -13,7 +13,8 @@ define ->
 		# changed, or a new instance of this type if it should.
 		# @returns [InputType]
 		# [InputType] check
-		@customChecker: (check) -> check
+		# [InputType] InputType
+		@customChecker: (check, InputType) -> check
 		# If the input type is custom
 		# @returns [Boolean]
 		custom: -> yes

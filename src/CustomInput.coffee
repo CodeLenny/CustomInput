@@ -38,5 +38,5 @@ define ["jquery", "CustomInput/Editor", "CustomInput/util/InputTypeList"], ($, E
 				@editor.appendToFieldTypeMenu menu, @extraInputTypes
 		deserialize: (field) ->
 			for type in @extraInputTypes
-				field = type.customChecker field
+				field = type.customChecker field, type
 	return CustomInput

@@ -77,7 +77,7 @@
         _results = [];
         for (_i = 0, _len = _ref.length; _i < _len; _i++) {
           type = _ref[_i];
-          _results.push(field = type.customChecker(field));
+          _results.push(field = type.customChecker(field, type));
         }
         return _results;
       };
