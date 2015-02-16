@@ -26,7 +26,7 @@
       };
 
       Question.prototype.icon = function() {
-        return "fa-star-half";
+        return "star-half";
       };
 
       Question.prototype.customEditorChecker = function(check) {

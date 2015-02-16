@@ -13,7 +13,7 @@
       };
 
       InputType.prototype.icon = function() {
-        return "fa-x";
+        return "x";
       };
 
       InputType.prototype.getNativeType = function() {

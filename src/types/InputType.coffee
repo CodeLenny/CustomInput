@@ -4,7 +4,7 @@ define ->
 			@name = if inherit and inherit.name then inherit.name else "" # [String]
 			@description = if inherit and inherit.description then inherit.description else "" # [String]
 		name: -> "Untitled Input"
-		icon: -> "fa-x"
+		icon: -> "x"
 		# Return the native type that this input is stored as.
 		# @returns [String]
 		getNativeType: -> ""
