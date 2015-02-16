@@ -10,7 +10,6 @@
 
       function Question(inherit) {
         Question.__super__.constructor.call(this, inherit);
-        this.customViewerChecker = this.customEditorChecker;
       }
 
       Question.prototype.nativeType = function() {
