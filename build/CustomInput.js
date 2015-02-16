@@ -59,7 +59,7 @@
               return;
             }
             field = _this.deserialize(field);
-            if (field.isCustom()) {
+            if (field.custom()) {
               return field.replaceEditor(_this.editor);
             }
           };

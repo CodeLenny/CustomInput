@@ -25,7 +25,7 @@ define ["jquery", "CustomInput/Editor", "CustomInput/util/InputTypeList"], ($, E
 			# fields = @viewer.getFields()
 			# for field in fields
 			#	field = @deserialize(field)
-			# 	field.replaceViewer viewer if field.isCustom()
+			# 	field.replaceViewer viewer if field.custom()
 		loadEditor: ->
 			@editor = new Editor @
 			@editor.appendToInsertMenu(@extraInputTypes)
@@ -33,7 +33,7 @@ define ["jquery", "CustomInput/Editor", "CustomInput/util/InputTypeList"], ($, E
 				field = @editor.getCurrentInputType()
 				return if not field
 				field = @deserialize(field)
-				field.replaceEditor @editor if field.isCustom()
+				field.replaceEditor @editor if field.custom()
 			@editor.onQuestionTypeDropdown (menu) =>
 				@editor.appendToFieldTypeMenu menu, @extraInputTypes
 		deserialize: (field) ->
