@@ -21,11 +21,11 @@
         return true;
       };
 
-      Question.prototype.name = function() {
+      Question.prototype.displayName = function() {
         return "True False Question";
       };
 
-      Question.prototype.icon = function() {
+      Question.prototype.displayIcon = function() {
         return "star-half";
       };
 

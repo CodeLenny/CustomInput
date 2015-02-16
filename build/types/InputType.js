@@ -8,11 +8,11 @@
         this.description = inherit && inherit.description ? inherit.description : "";
       }
 
-      InputType.prototype.name = function() {
+      InputType.prototype.displayName = function() {
         return "Untitled Input";
       };
 
-      InputType.prototype.icon = function() {
+      InputType.prototype.displayIcon = function() {
         return "x";
       };
 

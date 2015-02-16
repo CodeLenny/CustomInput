@@ -37,10 +37,10 @@
           });
           icon = $("<div />").addClass("docs-icon-img-container docs-icon-img fa fa-" + (type.icon())).css("-webkit-user-select", "none");
           container.append(iconHolder.append(icon));
-          label = $("<span />").addClass("google-menuitem-label").css("-webkit-user-select", "none").text(item.name().substr(1)).attr({
-            "aria-label": item.name()
+          label = $("<span />").addClass("google-menuitem-label").css("-webkit-user-select", "none").text(item.displayName().substr(1)).attr({
+            "aria-label": item.displayName()
           });
-          letter = $("<span />").addClass("goog-menuitem-mnemonic-hint").css("-webkit-user-select", "none").text(item.name.substr(0, 1));
+          letter = $("<span />").addClass("goog-menuitem-mnemonic-hint").css("-webkit-user-select", "none").text(item.displayName.substr(0, 1));
           _results.push(menu.append(item.append(container.append(label.prepend(letter)))));
         }
         return _results;

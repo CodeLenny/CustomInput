@@ -5,8 +5,8 @@ define ["CustomInput/types/InputType"], (InputType) ->
 			@customViewerChecker = @customEditorChecker
 		nativeType: -> "Scale"
 		custom: -> yes
-		name: -> "True False Question"
-		icon: -> "star-half"
+		displayName: -> "True False Question"
+		displayIcon: -> "star-half"
 		customEditorChecker: (check) ->
 			if @isIn(@name, ["[True/False]", "[True False]", "[T/F]", "[t/f]"])
 				return new Question(check)
