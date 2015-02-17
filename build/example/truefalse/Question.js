@@ -13,7 +13,7 @@
       }
 
       Question.prototype.nativeType = function() {
-        return "Scale";
+        return "Multiple Choice";
       };
 
       Question.prototype.custom = function() {

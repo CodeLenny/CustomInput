@@ -2,7 +2,7 @@ define ["CustomInput/types/InputType"], (InputType) ->
 	class Question extends InputType
 		constructor: (inherit) ->
 			super inherit
-		nativeType: -> "Scale"
+		nativeType: -> "Multiple Choice"
 		custom: -> yes
 		displayName: -> "True False Question"
 		displayIcon: -> "star-half"
