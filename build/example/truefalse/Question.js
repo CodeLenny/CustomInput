@@ -54,8 +54,8 @@
         pageBasedOnAnswer.parent().parent().hide();
         checkboxDiv = $("<div />");
         this.clarifyCheckbox = $("<input type='checkbox' />");
-        checkbox.onchange(this.clarify);
-        checkboxDiv.append(checkbox).append($("<span>Allow clarification</span>"));
+        this.clarifyCheckbox.onchange(this.clarify);
+        checkboxDiv.append(this.clarifyCheckbox).append($("<span>Allow clarification</span>"));
         preview.append(checkboxDiv);
         return preview.append(this.createDisplay());
       };
