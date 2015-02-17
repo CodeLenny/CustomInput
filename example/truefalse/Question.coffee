@@ -23,7 +23,7 @@ define ["CustomInput/types/InputType"], (InputType) ->
 			pageBasedOnAnswer.parent().parent().hide()
 			checkboxDiv = $("<div />")
 			@clarifyCheckbox = $("<input type='checkbox' />")
-			@clarifyCheckbox.onchange @clarify
+			@clarifyCheckbox.change @clarify
 			checkboxDiv.append(@clarifyCheckbox).append($("<span>Allow clarification</span>"))
 			preview.append(checkboxDiv)
 			preview.append @createDisplay()
