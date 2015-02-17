@@ -13,7 +13,7 @@
       }
 
       Question.prototype.nativeType = function() {
-        return "Multiple Choice";
+        return "Text";
       };
 
       Question.prototype.custom = function() {
@@ -44,6 +44,70 @@
           }
         }
         return false;
+      };
+
+      Question.prototype.replaceEditor = function(editor) {
+        var checkboxDiv, pageBasedOnAnswer, preview;
+        preview = $(".ss-formwidget-fieldpreview");
+        preview.children().remove();
+        pageBasedOnAnswer = $(".ss-formwidget-go-to-page-cb");
+        pageBasedOnAnswer.parent().parent().hide();
+        checkboxDiv = $("<div />");
+        this.clarifyCheckbox = $("<input type='checkbox' />");
+        checkbox.onchange(this.clarify);
+        checkboxDiv.append(checkbox).append($("<span>Allow clarification</span>"));
+        preview.append(checkboxDiv);
+        return preview.append(this.createDisplay());
+      };
+
+      Question.prototype.allowClarify = function() {
+        return this.getDescription().indexOf("[AllowClarify]") > -1;
+      };
+
+      Question.prototype.createDisplay = function() {
+        var buttons, container, falseButton, main, toggle, trueButton;
+        container = $("<div />");
+        main = $("<div />");
+        buttons = $("<span />");
+        trueButton = $("<button>True</button>");
+        falseButton = $("<button>False</button>");
+        toggle = function(turnOn, turnOff) {
+          turnOn.css({
+            "background-color": "lightGrey",
+            "padding-left": "5px",
+            "padding-right": "5px"
+          });
+          return turnOff.css({
+            "background-color": null,
+            "padding-left": null,
+            "padding-right": null
+          });
+        };
+        trueButton.onclick = (function(_this) {
+          return function() {
+            toggle(trueButton, falseButton);
+            return _this.button(true);
+          };
+        })(this);
+        falseButton.onclick = (function(_this) {
+          return function() {
+            toggle(falseButton, trueButton);
+            return _this.button(false);
+          };
+        })(this);
+        buttons.append(trueButton).append(falseButton);
+        this.questionSpan = $("<span />").text(this.name);
+        main.append(buttons).append(this.questionSpan);
+        this.clarify = $("<div />").append($("<input />").attr("placeholder", "Clarify").onkeyup(this.clarified));
+        container.append(main).append(this.clarify);
+        return container;
+      };
+
+      Question.prototype.button = function(val) {};
+
+      Question.prototype.clarified = function() {
+        var val;
+        return val = this.clarify.children("input").val();
       };
 
       return Question;
