@@ -7,7 +7,7 @@ define ["CustomInput/types/InputType"], (InputType) ->
 		displayName: -> "True False Question"
 		displayIcon: -> "star-half"
 		@customChecker: (check, Question) ->
-			if @isIn(@name, ["[True/False]", "[True False]", "[T/F]", "[t/f]"])
+			if @isIn(check.name, ["[True/False]", "[True False]", "[T/F]", "[t/f]"])
 				return new Question(check)
 			return check
 		# Check if a series of phrases is in a test string.
