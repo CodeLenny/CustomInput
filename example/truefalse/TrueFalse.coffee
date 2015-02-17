@@ -1,5 +1,5 @@
 inputVersion = "978cfaa"
-exampleVersion = "fed0f32"
+exampleVersion = "b574185"
 
 requirejs.config
     baseUrl: "//cdn.rawgit.com/CodeLenny/CustomInput/#{inputVersion}/build"
