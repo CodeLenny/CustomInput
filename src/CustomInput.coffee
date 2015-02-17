@@ -30,12 +30,14 @@ define ["jquery", "CustomInput/Editor", "CustomInput/util/InputTypeList"], ($, E
 			@editor = new Editor @
 			@editor.appendToInsertMenu(@extraInputTypes)
 			@editor.onFieldSelect =>
-				field = @editor.getCurrentInputType()
-				return if not field
-				field = @deserialize(field)
-				field.replaceEditor @editor if field.custom()
+				window.setTimeout @populateField, 1000
 			@editor.onQuestionTypeDropdown (menu) =>
 				@editor.appendToFieldTypeMenu menu, @extraInputTypes
+		populateField: =>
+			field = @editor.getCurrentInputType()
+			return if not field
+			field = @deserialize(field)
+			field.replaceEditor @editor if field.custom()
 		deserialize: (field) ->
 			for type in @extraInputTypes
 				field = type.customChecker field, type
