@@ -116,8 +116,8 @@
       Editor.prototype.getCurrentInputType = function() {
         var Type, description, el, name, type;
         el = this.getCurrentField();
-        name = $("[id$=':fw_tf']", el).val();
-        description = $("[id$=':fw_htf']", el).val();
+        name = $("[id$='.fw_tf']", el).val();
+        description = $("[id$='.fw_htf']", el).val();
         Type = (function() {
           switch ($(".ss-formwidget-container-editor [id$='fw_tdd'] .goog-flat-menu-button-caption").text()) {
             case "Text":

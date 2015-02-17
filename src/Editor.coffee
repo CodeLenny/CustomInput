@@ -82,8 +82,8 @@ define [
 			$(".ss-formwidget-container-editor")
 		getCurrentInputType: ->
 			el = @getCurrentField()
-			name = $("[id$=':fw_tf']", el).val()
-			description = $("[id$=':fw_htf']", el).val()
+			name = $("[id$='.fw_tf']", el).val()
+			description = $("[id$='.fw_htf']", el).val()
 			Type = switch $(".ss-formwidget-container-editor [id$='fw_tdd'] .goog-flat-menu-button-caption").text()
 				when "Text"
 					TextInput
