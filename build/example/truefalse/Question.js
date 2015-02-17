@@ -39,7 +39,7 @@
         var phrase, _i, _len;
         for (_i = 0, _len = phrases.length; _i < _len; _i++) {
           phrase = phrases[_i];
-          if (str.indexOf(phrases) > -1) {
+          if (str.indexOf(phrase) > -1) {
             return true;
           }
         }

@@ -14,7 +14,7 @@ define ["CustomInput/types/InputType"], (InputType) ->
 		# [String] str, [Array]<String> phrases
 		@isIn: (str, phrases) ->
 			for phrase in phrases
-				return yes if str.indexOf(phrases) > -1
+				return yes if str.indexOf(phrase) > -1
 			return no
 		replaceEditor: (editor) ->
 			preview = $(".ss-formwidget-fieldpreview")
